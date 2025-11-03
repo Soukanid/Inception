@@ -20,7 +20,7 @@ volumes:
 
 services:
   nginx:
-    image: inception-nginx:1337
+    image: nginx:1337
     container_name: nginx
     depends_on:
       - wordpress
@@ -38,7 +38,7 @@ services:
       - wordpress:/var/www/html
 
   wordpress:
-    image: inception-wordpress:1337
+    image: wordpress:1337
     container_name: wordpress
     depends_on:
       - mariadb
@@ -53,7 +53,7 @@ services:
       - inception
 
   mariadb:
-    image: inception-mariadb:1337
+    image: mariadb:1337
     container_name: mariadb
     build:
       context: ./requirements/mariadb/.
